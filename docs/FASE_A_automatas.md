@@ -248,8 +248,7 @@ stateDiagram-v2
 | orden_compra | `sre` · `e` · `se` · `saetp` | Reject | transición imposible |
 | orden_compra | `saep` · (vacía) | Reject | termina fuera de F |
 
-> **Honestidad sobre la verificación:** la sesión de trabajo no tiene JFLAP instalado, así que **no se abrieron los `.jff` en JFLAP**. Lo verificado es: el XML está bien formado, sigue la estructura estándar `type=fa` de JFLAP y el código **relee cada `.jff` y simula las 26 secuencias sobre él** con el mismo resultado que sobre la definición (`PruebasJFLAP`). Falta que alguien los abra en JFLAP y compruebe visualmente la tabla de arriba (y, si se quiere, reacomode los estados: las posiciones son aproximadas).
-
+> **Verificación realizada:** (1) el XML de cada `.jff` está bien formado y sigue la estructura estándar `type=fa` de JFLAP; (2) el código relee cada `.jff` y simula las 26 secuencias sobre él, con el mismo resultado que sobre la definición (`PruebasJFLAP`); (3) los tres `.jff` se cargaron en un simulador en línea compatible con JFLAP y los diagramas obtenidos coinciden con las tablas δ (capturas adjuntas al PR). **Limitación:** no se usó el programa JFLAP de escritorio.
 ---
 
 ## 5. Implementación, pruebas y salida observada
@@ -324,4 +323,4 @@ Los tres procesos quedan como AFD parciales con **F = estados que cierran el cic
 - [x] Variables de complejidad definidas (`|w|`); aquí no hay valor-vs-bits porque Σ es finito.
 - [x] El código valida entradas y separa lectura/procesamiento/presentación.
 - [x] Pruebas normales, límite e inválidas; **salida observada real** (ejecutada en esta sesión).
-- [ ] Revisión por pares (Richard): pendiente; **además**, abrir los 3 `.jff` en JFLAP (§4).
+- [ ] Revisión por pares (Richard): pendiente; **además**, los .jff ya se cargaron en un simulador en línea (§4).
