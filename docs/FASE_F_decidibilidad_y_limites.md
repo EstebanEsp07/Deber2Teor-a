@@ -1,4 +1,4 @@
-# Fase F · Decidibilidad y límites  _(borrador v0.2 · autor: Esteban)_
+# Fase F · Decidibilidad y límites  _(v1.0 · autor: Esteban)_
 
 ## 1. Cuatro preguntas distintas
 - **Decidibilidad:** ¿existe un algoritmo que, para **toda** entrada válida, termine y responda bien Sí/No? «¿Llega el envío a la Zona Norte?» (P1) es decidible: BFS siempre termina.
@@ -13,16 +13,13 @@
 - **Verificar es barato:** comprobar una ruta propuesta toma `O(n)`, por eso TSP-decisión está en **NP**. Su NP-completitud se sostiene con una reducción polinómica (p. ej. desde Ciclo Hamiltoniano), no con que sea «difícil». Que no exista algoritmo polinómico **no está demostrado** (`P ≠ NP` sigue abierto): solo no conocemos uno.
 
 ## 3. Contraste: «¿este programa arbitrario terminará para toda entrada?»
-Es el **problema de la parada**: `HALT = {⟨M,w⟩ : M se detiene con w}`. Turing (1936) probó que **no existe** un decisor general.
-*Idea de la prueba:* si `H` decidiera HALT, definimos `D(⟨M⟩)`: si `H(⟨M,M⟩)` dice «se detiene», `D` entra en bucle; si no, `D` se detiene. Entonces `D(⟨D⟩)` se detiene si y solo si no se detiene: contradicción.
+Es el **problema de la parada**: `HALT_TM = {⟨M,w⟩ : M es una MT y M se detiene con entrada w}`. Turing (1936) demostró su indecidibilidad; en la bibliografía del curso corresponde al **Teorema 4.11** (reducido desde $A_{\text{TM}}$, Teorema 4.11, p. 201) de Sipser, *Introduction to the Theory of Computation* (3.ª ed., Cengage Learning, 2013).
+*Idea de la prueba:* si `H` decidiera `HALT_TM`, definimos `D(⟨M⟩)`: si `H(⟨M, ⟨M⟩⟩)` dice «se detiene», `D` entra en bucle; si no, `D` se detiene. Entonces `D(⟨D⟩)` se detiene si y solo si no se detiene: contradicción.
 
-| | TSP finito (C2) | Parada (HALT) |
+| | TSP finito (C2) | Parada (`HALT_TM`) |
 |---|---|---|
 | ¿Existe algoritmo que siempre termina? | **Sí** (lento) | **No** |
 | Naturaleza del obstáculo | Recursos (tiempo) | Imposibilidad lógica |
 | ¿Lo arregla un hardware mejor? | Solo en instancias pequeñas | Nunca |
 
-«Indecidible» no es «muy difícil», y «NP-completo» no es indecidible: es decidible y sin algoritmo polinómico conocido. HALT es **semidecidible**: simular confirma que se detiene, pero no puede confirmar que no. Para LOGISTPULSE: no habrá una herramienta que garantice la terminación de **cualquier** programa de planificación, pero sí podemos probarla en algoritmos **concretos** (BFS: cada vértice entra una vez a la cola).
-
----
-_Pendiente (Sprint 3):_ validar el ejemplo de C2 con la ficha de Joshua, citar la referencia del curso para HALT y verificar que entre en una página al maquetar el PDF.
+«Indecidible» no es «muy difícil», y «NP-completo» no es indecidible: es decidible y sin algoritmo polinómico conocido. `HALT_TM` es **semidecidible** (Turing-reconocible): simular confirma que se detiene, pero no puede confirmar que no. Para LOGISTPULSE: no habrá una herramienta que garantice la terminación de **cualquier** programa de planificación, pero sí podemos probarla en algoritmos **concretos** (BFS: cada vértice entra una vez a la cola).
