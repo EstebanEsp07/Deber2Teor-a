@@ -73,8 +73,8 @@ Evidencia de cada sprint = enlaces a commits/PR + nombre del revisor (o revisió
 | Fichas C1, C3 | Richard | Joshua (C1) / Elias (C3) | PR `#4` (C1) y PR `#5` (C3), integrados `22 nov` | Ficha + código + pruebas | Revisado |
 | Ficha C2 | Joshua | Elias / Esteban | PR `#7` y revisión de documento (`22 nov`) | Ficha + código + pruebas | Revisado |
 | Estándar de pruebas y limpieza | Esteban | Todos | Migración `pytest` → `unittest` y `README` (`22 nov`) | Suite unificada y repo limpio | Revisado |
-| G-06 Tabla resumen final | Esteban | Todos | Generada y actualizada (`docs/TABLA_RESUMEN.md`) | 10 casos completos | Borrador |
-| G-07 Informe PDF | Esteban | Todos | Generado y regenerado con los registros actualizados (`informe/Informe_LOGISTPULSE.pdf`) | PDF ensamblado | Borrador |
+| G-06 Tabla resumen final | Esteban | Todos | Generada y actualizada (`docs/TABLA_RESUMEN.md`) | 10 casos completos | Revisado |
+| G-07 Informe PDF | Esteban | Todos | Generado y regenerado con los registros actualizados (`informe/Informe_LOGISTPULSE.pdf`) | PDF ensamblado | Revisado |
 | G-08 Release `v1.0-entrega` | Esteban | Todos | — | Tag publicado | Pendiente |
 | G-09 Guion y ensayo de la exposición | Todos | — | — | ~2 min por persona | Pendiente |
 | Subida al espacio del curso | Esteban | — | — | Enlace al repo + PDF + .jff + diagramas + código + datos de prueba | Pendiente |
