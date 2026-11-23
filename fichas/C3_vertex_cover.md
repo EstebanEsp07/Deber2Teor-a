@@ -4,10 +4,10 @@
 |---|---|
 | **Grupo de análisis** | C · NP-completo (pertenencia a NP + origen + reducción + consecuencia práctica) |
 | **Correo** | «¿Bastan k almacenes para cubrir todas las zonas?» — Carla Núñez · Red logística |
-| **Responsable / revisor** | Richard (@RichJ-100) / Joshua (@joshdavr) |
+| **Responsable / revisor** | Richard (@RichJ-100) / Elias |
 | **Código** | `src/c3_vertex_cover.py` (verificador separado, búsqueda por ramificación, referencia por subconjuntos y la reducción desde 3-SAT) |
 | **Pruebas** | `tests/test_c3_vertex_cover.py` (43 pruebas) |
-| **Estado** | Borrador v0.1 — pendiente de revisión por pares |
+| **Estado** | Revisado |
 
 ## 1. Identificador, resumen y supuesto de lectura
 **Texto del correo (literal):** «Dado un grafo de cobertura y k, decide si existe un conjunto de a lo sumo k almacenes tal que toda zona esté cubierta por un almacén propio o vecino (Vertex Cover).»
