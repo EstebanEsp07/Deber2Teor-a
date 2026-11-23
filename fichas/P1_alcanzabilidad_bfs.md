@@ -81,7 +81,7 @@ python3 -m unittest discover -s tests -v
 ¿Quito alcanza Sur? No  [sin camino]
 ¿Norte alcanza Durán? No  [sin camino]
 ```
-Las 12 pruebas de `test_p1_bfs.py` pasan (`OK`; las 29 del repo se ejecutaron juntas en 0,05 s).
+Las 12 pruebas de `test_p1_bfs.py` pasan (`OK`; las 333 del repo se ejecutaron juntas en 0,05 s).
 
 ## 8. Conclusión
 Con los datos del correo, **la Zona Norte sí es alcanzable** desde Durán por `Durán → Quito → Norte`. El problema está en P y BFS lo resuelve en tiempo lineal. Si la red tuviera tiempos de viaje, la pregunta de "menor tiempo" pasa a optimización y se resuelve con Dijkstra (correo p2 / Fase B).
