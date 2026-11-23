@@ -193,27 +193,27 @@ Mensaje al rechazar un peso negativo:
 ValueError: peso negativo en ('Quito', 'Ambato') = -1: Dijkstra exige pesos >= 0 (usar Bellman–Ford en ese caso)
 ```
 
-`python -m pytest tests/test_dijkstra_p2.py -v`:
+`python3 -m unittest tests.test_dijkstra_p2 -v`:
 
 ```
-tests/test_dijkstra_p2.py::test_distancias_desde_quito PASSED            [  6%]
-tests/test_dijkstra_p2.py::test_ruta_reportada_a_guayaquil PASSED        [ 12%]
-tests/test_dijkstra_p2.py::test_empate_de_costo_8 PASSED                 [ 18%]
-tests/test_dijkstra_p2.py::test_desempate_no_depende_del_orden_de_entrada PASSED [ 25%]
-tests/test_dijkstra_p2.py::test_version_de_decision PASSED               [ 31%]
-tests/test_dijkstra_p2.py::test_origen_igual_a_destino PASSED            [ 37%]
-tests/test_dijkstra_p2.py::test_sin_ruta_en_sentido_contrario PASSED     [ 43%]
-tests/test_dijkstra_p2.py::test_peso_cero_permitido PASSED               [ 50%]
-tests/test_dijkstra_p2.py::test_rechaza_peso_negativo PASSED             [ 56%]
-tests/test_dijkstra_p2.py::test_rechaza_pesos_no_validos[5-TypeError] PASSED [ 62%]
-tests/test_dijkstra_p2.py::test_rechaza_pesos_no_validos[True-TypeError] PASSED [ 68%]
-tests/test_dijkstra_p2.py::test_rechaza_pesos_no_validos[nan-ValueError] PASSED [ 75%]
-tests/test_dijkstra_p2.py::test_rechaza_pesos_no_validos[inf-ValueError] PASSED [ 81%]
-tests/test_dijkstra_p2.py::test_rechaza_nodo_inexistente PASSED          [ 87%]
-tests/test_dijkstra_p2.py::test_rechaza_limite_no_numerico PASSED        [ 93%]
-tests/test_dijkstra_p2.py::test_contraejemplo_peso_negativo_sin_validar PASSED [100%]
+test_contraejemplo_peso_negativo_sin_validar (tests.test_dijkstra_p2.TestDijkstraP2.test_contraejemplo_peso_negativo_sin_validar) ... ok
+test_desempate_no_depende_del_orden_de_entrada (tests.test_dijkstra_p2.TestDijkstraP2.test_desempate_no_depende_del_orden_de_entrada) ... ok
+test_distancias_desde_quito (tests.test_dijkstra_p2.TestDijkstraP2.test_distancias_desde_quito) ... ok
+test_empate_de_costo_8 (tests.test_dijkstra_p2.TestDijkstraP2.test_empate_de_costo_8) ... ok
+test_origen_igual_a_destino (tests.test_dijkstra_p2.TestDijkstraP2.test_origen_igual_a_destino) ... ok
+test_peso_cero_permitido (tests.test_dijkstra_p2.TestDijkstraP2.test_peso_cero_permitido) ... ok
+test_rechaza_limite_no_numerico (tests.test_dijkstra_p2.TestDijkstraP2.test_rechaza_limite_no_numerico) ... ok
+test_rechaza_nodo_inexistente (tests.test_dijkstra_p2.TestDijkstraP2.test_rechaza_nodo_inexistente) ... ok
+test_rechaza_peso_negativo (tests.test_dijkstra_p2.TestDijkstraP2.test_rechaza_peso_negativo) ... ok
+test_rechaza_pesos_no_validos (tests.test_dijkstra_p2.TestDijkstraP2.test_rechaza_pesos_no_validos) ... ok
+test_ruta_reportada_a_guayaquil (tests.test_dijkstra_p2.TestDijkstraP2.test_ruta_reportada_a_guayaquil) ... ok
+test_sin_ruta_en_sentido_contrario (tests.test_dijkstra_p2.TestDijkstraP2.test_sin_ruta_en_sentido_contrario) ... ok
+test_version_de_decision (tests.test_dijkstra_p2.TestDijkstraP2.test_version_de_decision) ... ok
 
-============================== 16 passed in 0.04s ==============================
+----------------------------------------------------------------------
+Ran 13 tests in 0.006s
+
+OK
 ```
 
 ## 8. Conclusión
