@@ -174,7 +174,7 @@ Código: `src/dijkstra.py` (sin cambios respecto a la Fase B). Pruebas nuevas pa
 | Inválido | `test_rechaza_limite_no_numerico` | L = `"8"` | `TypeError` |
 | §5 | `test_contraejemplo_peso_negativo_sin_validar` | Quito→A 1, Quito→B 2, B→A −2 | el núcleo da dist[A] = 1 (la respuesta real es 0) |
 
-**Salida observada**, ejecutada con Python 3.13.18 y pytest 9.1.1 el 20-11-2026. Es la salida real, copiada después de ejecutar; antes de entregar, conviene volver a correrla en el repositorio del equipo y pegar esa salida.
+**Salida observada**, ejecutada con Python 3.13.18 y pytest 9.1.1 el 20-11-2026.
 
 `python src/dijkstra.py` (sección P2 de `main()`):
 
