@@ -116,7 +116,7 @@ Verificador acepta el certificado: True
 ¿d = 13 sirve como certificado (13 > B)? False
 ¿97 (primo) tiene divisor en [2, 10]? False
 ```
-Las 19 pruebas de `test_n2_factor.py` pasan (`OK`); las 104 del repo se ejecutaron juntas en 0,8 s.
+Las 19 pruebas de `test_n2_factor.py` pasan (`OK`); las 333 del repo se ejecutaron juntas en 0,8 s.
 
 ## 8. Conclusión
 Con los datos del correo, **N = 91 sí tiene un divisor en [2, 10]**: d = 7 (91 = 7 · 13); el otro factor, 13, queda fuera del intervalo. El problema está en **NP**: el certificado d se verifica con una división, pero eso **no** prueba que esté fuera de P ni que sea NP-completo. La búsqueda exacta es `O(B · M(log N))`: lineal en el valor de B y **exponencial en su tamaño en bits**; verificar es polinómico. Esa es la asimetría **encontrar vs. verificar** que pide la tarea.
