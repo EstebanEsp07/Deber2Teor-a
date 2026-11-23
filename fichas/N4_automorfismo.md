@@ -4,10 +4,10 @@
 |---|---|
 | **Grupo de análisis** | B · NP (pertenencia a NP por certificado) |
 | **Correo** | «¿La topología tiene una simetría?» — Santiago Jaramillo · Analítica |
-| **Responsable / revisor** | Richard (@RichJ-100) / Joshua (@joshdavr) |
+| **Responsable / revisor** | Richard (@RichJ-100) / Elias|
 | **Código** | `src/n4_automorfismo.py` (incluye el **verificador**; reutiliza `src/n1_isomorfismo.py`) |
 | **Pruebas** | `tests/test_n4_automorfismo.py` (21 pruebas) |
-| **Estado** | Borrador v0.1 — pendiente de revisión por pares |
+| **Estado** | Revisado |
 
 ## 1. Identificador y resumen (sin cambiar condiciones)
 Decidir si un grafo tiene un automorfismo distinto de la identidad, es decir, una permutación de los vértices que preserve las adyacencias y no sea la identidad. La permutación es el certificado y se verifica comparando pares de vértices. Datos del correo: grafo de 3 vértices (triángulo); tarea: mostrar una permutación no identidad o argumentar que no existe.
