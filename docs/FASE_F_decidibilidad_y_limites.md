@@ -13,7 +13,7 @@
 - **Verificar es barato:** comprobar una ruta propuesta toma `O(n)`, por eso TSP-decisión está en **NP**. Su NP-completitud se sostiene con una reducción polinómica (p. ej. desde Ciclo Hamiltoniano), no con que sea «difícil». Que no exista algoritmo polinómico **no está demostrado** (`P ≠ NP` sigue abierto): solo no conocemos uno.
 
 ## 3. Contraste: «¿este programa arbitrario terminará para toda entrada?»
-Es el **problema de la parada**: `HALT_TM = {⟨M,w⟩ : M es una MT y M se detiene con entrada w}`. Turing (1936) demostró su indecidibilidad; en la bibliografía del curso corresponde al **Teorema 4.11** (reducido desde $A_{\text{TM}}$, Teorema 4.11, p. 201) de Sipser, *Introduction to the Theory of Computation* (3.ª ed., Cengage Learning, 2013).
+Es el **problema de la parada**: `HALT_TM = {⟨M,w⟩ : M es una MT y M se detiene con entrada w}`. Turing (1936) demostró su indecidibilidad; en la bibliografía del curso es el **Teorema 5.1** de Sipser (se reduce desde `A_TM`, indecidible por el Teorema 4.11), *Introduction to the Theory of Computation* (3.ª ed., Cengage Learning, 2013).
 *Idea de la prueba:* si `H` decidiera `HALT_TM`, definimos `D(⟨M⟩)`: si `H(⟨M, ⟨M⟩⟩)` dice «se detiene», `D` entra en bucle; si no, `D` se detiene. Entonces `D(⟨D⟩)` se detiene si y solo si no se detiene: contradicción.
 
 | | TSP finito (C2) | Parada (`HALT_TM`) |
