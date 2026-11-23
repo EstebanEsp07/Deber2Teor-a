@@ -15,10 +15,10 @@
 |---|---|
 | Grupo de análisis | A·P |
 | Correo | «Máximo de camiones hacia clientes» — Luis Vaca · Distribución |
-| Responsable / revisor | Paula Altamirano / *(por asignar: otro integrante del equipo)* |
+| Responsable / revisor |Joshua / Elias |
 | Código | `src/flujo_maximo.py` |
 | Pruebas | `tests/test_flujo_maximo.py` |
-| Estado | Borrador (pendiente de revisión por otro integrante) |
+| Estado |Revisado |
 
 ## 1. Identificador y resumen (sin cambiar condiciones)
 
