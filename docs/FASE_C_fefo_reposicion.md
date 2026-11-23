@@ -133,7 +133,7 @@ SKU-C: posición = 25, sugerencia = 25
 SKU-D: posición = 30, sugerencia = 20
 SKU-E: posición = -15, sugerencia = 65
 ```
-`test_fefo.py`: 27 pruebas OK · `test_reposicion.py`: 18 pruebas OK · repo completo: 74 pruebas OK.
+`test_fefo.py`: 27 pruebas OK · `test_reposicion.py`: 18 pruebas OK · repo completo: 333 pruebas OK.
 
 ## 5. Conclusión
 FEFO se resuelve en `O(L log L)` tiempo y `O(L)` espacio con un orden total reproducible, y rechaza de forma atómica lo que el stock no cubre. La reposición es `O(1)` por SKU y no duplica órdenes porque las órdenes abiertas ya cuentan en la posición, siempre que se registren antes de volver a consultar.
