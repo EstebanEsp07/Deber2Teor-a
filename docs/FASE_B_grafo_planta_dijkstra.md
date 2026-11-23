@@ -167,7 +167,7 @@ Distancias desde R: {'A': 3, 'B': 2, 'C': 5, 'D': 11, 'E': 8, 'P': 6, 'R': 0}
   tiempo mínimo a Guayaquil: 8
   ruta a Guayaquil: costo 8  [Quito -> Latacunga -> Guayaquil]
 ```
-Las 19 pruebas de `test_dijkstra.py` pasan (`Ran 19 tests in 0.109s · OK`); con las de P1 y N1, el repo tiene 48 pruebas, todas `OK`.
+Las 19 pruebas de `test_dijkstra.py` pasan (`Ran 19 tests in 0.109s · OK`); con las de P1 y N1, el repo tiene 333 pruebas, todas `OK`.
 
 ## 7. Conclusión
 La planta es un grafo **no dirigido** de 7 zonas y 11 pasillos con pesos en metros. Sin bloqueos, el AMR va de Recepción a Despacho con **11 m** (dos rutas empatan; el código devuelve `R → B → A → E → D`). Si se bloquea Empaque no hay ruta, porque Despacho solo se conecta con Empaque. Dijkstra es exacto con pesos ≥ 0, termina porque cada vértice se finaliza una vez, y cuesta `O((V + E) log V)` en tiempo.
