@@ -7,7 +7,7 @@
 | **Responsable / revisor** | Esteban (@EstebanEsp07) / Elias (@elorgus) |
 | **Código** | `src/n1_isomorfismo.py` (incluye el **verificador**) |
 | **Pruebas** | `tests/test_n1_isomorfismo.py` (17 pruebas) |
-| **Estado** | Borrador v0.1 — pendiente de revisión por pares |
+| **Estado** | Revisado |
 
 ## 1. Identificador y resumen (sin cambiar condiciones)
 Dadas dos redes como grafos, decidir si existe una correspondencia uno a uno entre nodos que preserve las aristas (isomorfismo de grafos). Datos del correo: Red A y Red B, cada una con 3 nodos y 2 enlaces; pregunta «¿misma estructura?» (Sí/No).
