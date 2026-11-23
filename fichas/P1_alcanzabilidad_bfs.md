@@ -7,7 +7,7 @@
 | **Responsable / revisor** | Esteban (@EstebanEsp07) / Joshua (@joshdavr) |
 | **Código** | `src/p1_bfs.py` |
 | **Pruebas** | `tests/test_p1_bfs.py` (12 pruebas) |
-| **Estado** | Borrador v0.1 — pendiente de revisión por pares |
+| **Estado** | Revisado |
 
 ## 1. Identificador y resumen (sin cambiar condiciones)
 Dada una red de rutas activas, determinar si existe un camino desde la **Planta Durán** hasta la **Zona Norte**.
