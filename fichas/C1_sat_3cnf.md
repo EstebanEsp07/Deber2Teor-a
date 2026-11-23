@@ -7,7 +7,7 @@
 | **Responsable / revisor** | Richard (@RichJ-100) / Joshua (@joshdavr) |
 | **Código** | `src/c1_sat.py` (verificador, fuerza bruta y DPLL) |
 | **Pruebas** | `tests/test_c1_sat.py` (31 pruebas) |
-| **Estado** | Borrador v0.1 — pendiente de revisión por pares |
+| **Estado** | Revisado |
 
 ## 1. Identificador, resumen y supuestos
 Decidir si una fórmula booleana en forma normal conjuntiva con cláusulas de a lo sumo 3 literales (3-CNF) se puede hacer verdadera con alguna asignación de verdadero/falso a sus variables. Datos del correo: variables `x1, x2, x3` y cláusulas `(x1 ∨ ¬x2)` y `(x2 ∨ x3)`; tarea: codificar un solucionador pequeño y explicar cómo se verifica una asignación candidata.
