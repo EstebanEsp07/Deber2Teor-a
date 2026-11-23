@@ -8,7 +8,7 @@
 | **Sprint** | 2 |
 | **Código** | `src/n2_factor.py` (incluye el **verificador** `verificar_factor`) |
 | **Pruebas** | `tests/test_n2_factor.py` (19 pruebas) |
-| **Estado** | Borrador v0.1 — pendiente de revisión por pares |
+| **Estado** | Revisado |
 
 ## 1. Identificador y resumen (sin cambiar condiciones)
 **Texto del correo (literal):** «Dados enteros N y B en binario, decide si N tiene un divisor d con 2 ≤ d ≤ B. Un certificado "sí" es d; se comprueba dividiendo N por d.» Tarea del simulador: diferenciar el tiempo de **encontrar** un certificado del de **verificarlo**.
