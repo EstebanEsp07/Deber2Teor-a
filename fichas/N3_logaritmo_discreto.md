@@ -124,7 +124,7 @@ Verificador acepta el certificado: True
 ¿x = 7 sirve como certificado? False
 ¿Existe x en [0, 5]? (la solución x = 6 queda fuera) No
 ```
-Las 26 pruebas de `test_n3_logaritmo_discreto.py` pasan (`OK`); las 104 del repo se ejecutaron juntas en 0,8 s.
+Las 26 pruebas de `test_n3_logaritmo_discreto.py` pasan (`OK`); las 333 del repo se ejecutaron juntas en 0,8 s.
 
 ## 8. Conclusión
 Con los datos del correo, **sí existe x**: x = 6 (5⁶ = 15 625 = 679·23 + 8). DLOG-ACOT está en **NP**: el certificado x se verifica con exponenciación modular en tiempo polinómico en `log p + log B`, pero eso **no** prueba que esté fuera de P ni que sea NP-completo. La búsqueda exacta es `O(B · M(log p))`: lineal en el valor de B y **exponencial en su tamaño en bits**. `verificar_dlog` es además el **verificador de certificado de la Fase E (E-01)**: función separada de la búsqueda, con pruebas normales, límite e inválidas.
