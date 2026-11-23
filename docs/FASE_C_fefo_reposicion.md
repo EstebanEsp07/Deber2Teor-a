@@ -6,7 +6,7 @@
 | **Responsable / revisor** | Richard (@RichJ-100) / Joshua (@joshdavr) |
 | **Código** | `src/fefo.py`, `src/reposicion.py` |
 | **Pruebas** | `tests/test_fefo.py` (27), `tests/test_reposicion.py` (18) |
-| **Estado** | Borrador v0.1 — pendiente de revisión por pares |
+| **Estado** |Revisado |
 
 ## 1. Supuestos declarados (el enunciado no los fija)
 | ID | Supuesto | Por qué |
