@@ -8,7 +8,7 @@
 | **Sprint** | 2 |
 | **Código** | `src/n3_logaritmo_discreto.py` (incluye el **verificador de la Fase E**, `verificar_dlog`) |
 | **Pruebas** | `tests/test_n3_logaritmo_discreto.py` (26 pruebas) |
-| **Estado** | Borrador v0.1 — pendiente de revisión por pares |
+| **Estado** | Revisado |
 
 ## 1. Identificador y resumen (sin cambiar condiciones)
 **Texto del correo (literal):** «Dados p primo, g, h y B, decide si existe x entre 0 y B tal que g^x ≡ h (mod p). El certificado es x y la exponenciación modular lo verifica eficientemente.» Tarea del simulador: implementar búsqueda y verificador **separados** e indicar el costo de ambos.
