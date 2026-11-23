@@ -7,7 +7,7 @@
 | Responsable / revisor | Joshua / Elias |
 | Código | `src/dijkstra.py` (compartido con la Fase B, B-03) |
 | Pruebas | `tests/test_dijkstra_p2.py` |
-| Estado | Borrador (pendiente de revisión por otro integrante) |
+| Estado | Revisado |
 
 ## 1. Identificador y resumen (sin cambiar condiciones)
 
