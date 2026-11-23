@@ -19,9 +19,9 @@ Cada correo es una historia vinculada a **ficha + código + pruebas** (ver `PLAN
 | G-02 | Backlog (este archivo) | 1 | — | Revisado |
 | G-03 | Plantillas de ficha y de Pull Request | 1 | — | Revisado |
 | G-04 | Registro de sprints (`SPRINTS.md`) | 1–3 | — | Revisado |
-| G-05 | Retrospectiva real de cada sprint | 1–3 | Cierre de cada sprint | Borrador (notas de S1–S3 completadas; el equipo debe confirmarlas) |
-| G-06 | Tabla resumen de los 10 casos (`docs/TABLA_RESUMEN.md`) | 3 | Las 10 fichas | Borrador (10 de 10 casos; actualizada) |
-| G-07 | Informe PDF (`informe/Informe_LOGISTPULSE.pdf`) | 3 | A, B, C, D, F | Borrador (regenerado con `SPRINTS.md` y `BACKLOG.md` actualizados) |
+| G-05 | Retrospectiva real de cada sprint | 1–3 | Cierre de cada sprint | Revisado (notas de S1–S3 completadas) |
+| G-06 | Tabla resumen de los 10 casos (`docs/TABLA_RESUMEN.md`) | 3 | Las 10 fichas | Revisado (10 de 10 casos; actualizada) |
+| G-07 | Informe PDF (`informe/Informe_LOGISTPULSE.pdf`) | 3 | A, B, C, D, F | Revisado (regenerado con `SPRINTS.md` y `BACKLOG.md` actualizados) |
 | G-08 | Release etiquetado `v1.0-entrega` | 3 | Todo revisado | Pendiente |
 | G-09 | Guion y ensayo de la exposición (8–10 min, ~2 min/persona) | 3 | A, B, C y un caso de complejidad | Pendiente |
 
