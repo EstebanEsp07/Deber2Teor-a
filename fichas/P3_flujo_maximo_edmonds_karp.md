@@ -193,7 +193,7 @@ python -m unittest discover -s tests -v          # pruebas
 | Límite | destino inalcanzable → 0; arista de capacidad 0; una sola arista; tramos repetidos sumados; aristas antiparalelas; caso que exige arista inversa; capacidades `10¹⁸` con solo 2 aumentos; cota de aumentos ≤ V·E/2 en red bipartita 6×6; CSV sin cabecera y con líneas vacías |
 | Inválidas | capacidad negativa; capacidad `2.5`, `"3"`, `True`, `None`; nombre vacío; lazo; arista de 2 campos; `s = t`; origen o destino inexistente; CSV con campos faltantes o capacidad «siete»; entrada no textual; red que no es diccionario; K negativo, decimal o booleano |
 
-**Salida observada.** Se ejecutó en el entorno de trabajo de este chat (Linux, **Python 3.13.18**) el 21-nov-2026. El texto está pegado tal cual. *El código usa solo construcciones compatibles con 3.8+, pero no se probó en 3.8. El equipo debe volver a correrlo en su máquina y reemplazar este bloque por su propia salida antes de la entrega.*
+**Salida observada.**
 
 `python src/flujo_maximo.py`:
 
