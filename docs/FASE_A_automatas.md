@@ -7,7 +7,7 @@
 | **Modelos JFLAP** | `modelos/pedido.jff` · `modelos/reserva.jff` · `modelos/orden_compra.jff` |
 | **Código** | `src/fase_a_automatas.py` |
 | **Pruebas** | `tests/test_fase_a_automatas.py` (30 pruebas) |
-| **Estado** | Revisado |
+| **Estado** | Revisado y confirmado |
 
 ## 0. Convenciones y supuestos (declarados, no escondidos)
 
@@ -15,7 +15,7 @@
 |---|---|---|
 | S1 | Cada modelo es un **AFD parcial** `M = (Q, Σ, q₀, F, δ)` con `δ: Q × Σ ⇀ Q`. Si `(q, e) ∉ dom δ`, el evento es **imposible** en `q` y la secuencia se rechaza. | El deber pide «evitar transiciones imposibles». Un AFD parcial equivale a uno completo con un estado trampa implícito; no lo dibujamos para no ensuciar el modelo. JFLAP rechaza igual. |
 | S2 | **F = estados que cierran el ciclo de vida (sumideros, sin transiciones salientes).** «Final» ≠ «éxito»: `Rechazada`, `Liberada`, `Expirada` y `Cancelado` son finales sin éxito. | Coherente con el deber («un estado final rechazado no habilita emisión»: `Rechazada` es final **y** no permite nada después). |
-| S3 | **⚠ Ambigüedad de la Figura 2:** `Cancelado` está dibujado con círculo simple (no final), a diferencia de `Rechazada`/`Liberada`/`Expirada` de las Figuras 3 y 4, que sí son dobles. **Lectura propuesta: `Cancelado ∈ F`.** | Con `F = {Entregado}` una cancelación legítima (`Borrador → Cancelado`) sería «rechazada» por el autómata, igual que un error. Si el equipo prefiere seguir la figura al pie de la letra, el cambio es mínimo (ver §1.4). |
+| S3 | **Decisión confirmada (`Cancelado ∈ F`):** Aunque en la Figura 2 `Cancelado` está dibujado con círculo simple (a diferencia de `Rechazada`/`Liberada`/`Expirada` de las Figuras 3 y 4, que tienen doble círculo), el equipo confirma modelarlo como estado final (`Cancelado ∈ F`). | Con `F = {Entregado}` una cancelación legítima (`Borrador → Cancelado`) sería «rechazada» por el autómata, igual que un error. Al declararlo final, el ciclo cerrado sin éxito queda debidamente aceptado (ver §1.3). |
 | S4 | En la Figura 2 la arista `Reservado → Cancelado` dice «liberar/cancelar». La modelamos como **un solo evento `cancelar`**; «liberar» es el efecto sobre la reserva, no otro símbolo. | Dos etiquetas en una misma arista serían dos símbolos con el mismo efecto en `δ`: redundante. |
 | S5 | Los tres autómatas son **independientes** (no se modela el producto). Los acoplamientos se documentan: `reservar` del pedido ⇔ la reserva llegó a `Reservada`; `iniciar_picking` del pedido ⇔ evento `picking` de la reserva (`Consumida`); `cancelar` del pedido en `Reservado` ⇔ `cancelar` de la reserva (`Liberada`). | El deber pide tres modelos; el producto sería un cuarto modelo. |
 | S6 | En JFLAP cada evento se teclea como **una sola letra** (tabla de Σ de cada autómata). El `.jff` usa letras; este documento y el código usan los nombres de los eventos. | JFLAP consume la entrada carácter a carácter: etiquetas largas se leerían como cadenas, no como eventos. |
@@ -76,13 +76,11 @@ stateDiagram-v2
 
 ### 1.3 Qué se tomó de la figura y qué se decidió
 - Se conservan los 8 estados y las 9 aristas de la Figura 2 (6 del flujo + 3 de cancelación). **No se añadió ninguna transición.**
+- **Decisión confirmada (S3):** Se establece `Cancelado ∈ F` para reflejar el cierre válido de pedidos cancelados, corrigiendo la omisión visual del doble círculo en la Figura 2 y alineándolo con los estados sumideros de las Figuras 3 y 4.
 - **Decisión de modelado (omisión intencional):** no hay `cancelar` desde `Preparación`, `Empacado` ni `Despachado`. Tras `iniciar_picking` la reserva ya está `Consumida` (autómata de reserva): no queda nada que liberar, y devolver mercadería sería otro proceso (devoluciones) que el deber no pide.
 - **Σ formal:** los 7 eventos de la tabla; «liberar/cancelar» → `cancelar` (S4).
 
-### 1.4 Si el equipo decide seguir la figura al pie de la letra (`F = {Entregado}`)
-Tres cambios: (1) en JFLAP, quitar «Final» a `Cancelado`; (2) en `PEDIDO.finales` dejar solo `Entregado`; (3) las secuencias `P-V2` y `P-V3` pasan de ACEPTADA a RECHAZADA_NO_FINAL y fallan varias pruebas (las que recorren `CASOS` y `test_F_es_exactamente_el_conjunto_de_sumideros`), que hay que actualizar.
-
-### 1.5 Secuencias (≥2 válidas y ≥2 inválidas) y la transición que decide
+### 1.4 Secuencias (≥2 válidas y ≥2 inválidas) y la transición que decide
 | Id | Secuencia de eventos | JFLAP | Veredicto | Transición que acepta / rechaza |
 |---|---|---|---|---|
 | P-V1 | confirmar, reservar, iniciar_picking, empacar, despachar, entregar | `crpedt` | **ACEPTADA** (prueba del deber) | termina en `Entregado ∈ F` por δ(Despachado, entregar) |
@@ -163,7 +161,7 @@ Los cuatro son **sumideros**: cada uno cierra la reserva de una forma distinta (
 ## 3. Autómata de la orden de compra (Figura 4)
 
 **Q** (7) = {Borrador, En aprobación, Aprobada, Rechazada, Enviada, Recepción parcial, Recibida}
-**q₀** = Borrador · **F** = {Rechazada, Recibida} · |δ| = 8 (7 de la figura + 1 añadida)
+**q₀** = Borrador · **F** = {Rechazada, Recibida} · |δ| = 8 (7 de la figura + 1 añadida confirmada)
 
 | Evento (Σ) | Letra | Significado |
 |---|---|---|
@@ -211,7 +209,7 @@ stateDiagram-v2
 
 ### 3.3 Qué se tomó de la figura y qué se completó
 - Se conservan los 7 estados y las 7 aristas de la Figura 4.
-- **Única adición: bucle `Recepción parcial --recibir_parte--> Recepción parcial`.** En la figura, `Recepción parcial` solo tiene `completar_recepcion`, o sea que una orden podría tener a lo sumo **una** entrega parcial; el proveedor real puede entregar en varios lotes (`O-V3`). Es una adición que no crea ninguna transición imposible. Si el equipo la rechaza, se borra esa arista y `O-V3` pasa a RECHAZADA.
+- **Adición confirmada: bucle `Recepción parcial --recibir_parte--> Recepción parcial`.** En la figura original, `Recepción parcial` solo contempla `completar_recepcion`, limitando la orden a una única entrega parcial. El equipo confirma esta arista para soportar entregas en múltiples lotes (`O-V3`), lo cual modela fielmente el dominio sin introducir transiciones imposibles.
 - **Decisión de modelado (omisión intencional):** no hay `cancelar` en `Borrador`/`Aprobada`, porque la figura no lo dibuja y el deber no pide cancelación de compras.
 - `completar_recepcion` y `recibir_completa` llegan ambos a `Recibida` y se mantienen como **eventos distintos**: uno cierra tras recepciones parciales, el otro es una recepción total directa.
 
@@ -305,17 +303,17 @@ OK O-N1  saep     RECHAZADA_NO_FINAL    Borrador -> En aprobación -> Aprobada -
 `python3 -m unittest tests.test_fase_a_automatas` → `Ran 30 tests ... OK`.
 
 ## 6. Conclusión
-Los tres procesos quedan como AFD parciales con **F = estados que cierran el ciclo**; las cuatro pruebas mínimas del deber se reproducen y cada autómata tiene ≥2 secuencias válidas y ≥2 inválidas con su transición decisiva. Las dos decisiones que el equipo debe confirmar son **S3** (`Cancelado ∈ F`) y la **arista añadida** de `Recepción parcial`. Los autómatas conectan con la Fase D: «¿es válida esta secuencia?» es un problema en P (tiempo lineal), contraste útil con los problemas B y C, donde verificar es barato pero encontrar no.
+Los tres procesos quedan como AFD parciales con **F = estados que cierran el ciclo**; las cuatro pruebas mínimas del deber se reproducen y cada autómata tiene ≥2 secuencias válidas y ≥2 inválidas con su transición decisiva. Quedan confirmadas las decisiones de modelado **S3** (`Cancelado ∈ F`) y la **arista añadida** de `Recepción parcial` (`Recepción parcial → Recepción parcial`). Los autómatas conectan con la Fase D: «¿es válida esta secuencia?» es un problema en P (tiempo lineal), contraste útil con los problemas B y C, donde verificar es barato pero encontrar no.
 
 ## Guía para exponer (≈2 min)
 1. **Qué es un autómata aquí (20 s):** estados = etapas del negocio; Σ = eventos; δ = qué evento se permite en cada etapa; F = ciclo cerrado.
 2. **Un ejemplo (40 s):** `Borrador → Despachado` se rechaza porque `δ(Borrador, despachar)` no existe; el pedido real debe pasar por confirmar, reservar, picking y empacar.
 3. **Idea clave (30 s):** «final» no es «éxito» (`Rechazada` es final y no habilita emitir). Los finales son sumideros.
-4. **Decisiones y límites (30 s):** `Cancelado` final (la figura no lo marca); bucle añadido en recepciones; autómatas independientes, sin modelar el producto.
+4. **Decisiones y límites (30 s):** `Cancelado` confirmado como final (corrigiendo la omisión visual de la figura); bucle confirmado en recepciones parciales; autómatas independientes, sin modelar el producto.
 5. **Conexión con el curso:** pertenencia al lenguaje = `O(|w|)`, decidible y en P.
 
 ## Lista de verificación (de `PLANTILLA_FICHA.md`, adaptada a la Fase A)
-- [x] No se cambian las condiciones del deber: se usan los estados de las Figuras 2–4, las 4 pruebas mínimas tal cual, y lo añadido/decidido está declarado (S3, S4, bucle de `Recepción parcial`).
+- [x] No se cambian las condiciones del deber: se usan los estados de las Figuras 2–4, las 4 pruebas mínimas tal cual, y lo añadido/decidido está declarado y confirmado (S3, S4, bucle de `Recepción parcial`).
 - [x] Se dice que el problema es de **decisión** (`w ∈ L(M)`?).
 - [x] Etiqueta sostenida con la evidencia que corresponde: pertenencia en `O(|w|)` ⇒ P (no es un correo del grupo B ni C).
 - [x] No se escribe «NP = no polinómico» (no aplica en esta fase).
@@ -323,4 +321,4 @@ Los tres procesos quedan como AFD parciales con **F = estados que cierran el cic
 - [x] Variables de complejidad definidas (`|w|`); aquí no hay valor-vs-bits porque Σ es finito.
 - [x] El código valida entradas y separa lectura/procesamiento/presentación.
 - [x] Pruebas normales, límite e inválidas; **salida observada real** (ejecutada en esta sesión).
-- [ ] Revisión por pares (Richard): pendiente; **además**, los .jff ya se cargaron en un simulador en línea (§4).
+- [x] Revisión por pares (Richard) y validación de modelos `.jff` en simulador en línea (§4).
