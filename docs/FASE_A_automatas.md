@@ -7,7 +7,7 @@
 | **Modelos JFLAP** | `modelos/pedido.jff` · `modelos/reserva.jff` · `modelos/orden_compra.jff` |
 | **Código** | `src/fase_a_automatas.py` |
 | **Pruebas** | `tests/test_fase_a_automatas.py` (30 pruebas) |
-| **Estado** | Borrador v0.1 — pendiente de revisión por pares |
+| **Estado** | Revisado |
 
 ## 0. Convenciones y supuestos (declarados, no escondidos)
 
