@@ -7,7 +7,7 @@
 | **Responsable / revisor** | Joshua (@joshdavr) / Elias (@elorgus) |
 | **Código** | `src/dijkstra.py` (compartido con la ficha P2) |
 | **Pruebas** | `tests/test_dijkstra.py` (19 pruebas) |
-| **Estado** | Borrador v0.1 — pendiente de revisión por pares |
+| **Estado** |Revisado |
 
 ## 1. Modelo de la planta como grafo ponderado
 Se usa el grafo de la **Figura 5 del enunciado** (planta con distancias en metros), sin cambiar nodos ni pesos.
