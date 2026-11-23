@@ -8,10 +8,10 @@
 |---|---|
 | Grupo de análisis | C·NP-completo |
 | Correo | «¿Existe una ruta hamiltoniana dentro del presupuesto?», de Jorge Tapia (Ruteo) |
-| Responsable / revisor | Joshua / *pendiente de asignar* |
+| Responsable / revisor | Joshua / Elias |
 | Código | `src/tsp_decision.py` |
 | Pruebas | `tests/test_tsp_decision.py` |
-| Estado | Borrador (pendiente de revisión por un compañero) |
+| Estado | Revisado |
 
 ---
 
