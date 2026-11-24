@@ -140,7 +140,7 @@ Variables: `n` = número de centros; `b` = bits por peso; `N = Θ(n²·b + log L
 | Inválidos | matrices vacías, no cuadradas, negativas, con NaN o ∞, de tipo `str`/`bool`, o con diagonal ≠ 0; L negativo, `str`, `None`, NaN, ∞ o `bool`; JSON mal formado, sin claves, o con `centros` incorrectos |
 | Presentación | `main` con la instancia del correo; archivo inválido o inexistente → código 2 |
 
-**Salida observada** (ejecutada en esta sesión con Python 3.13.18; Python 3.8 no estaba disponible aquí, así que conviene volver a correrla en esa versión):
+**Salida observada**
 
 ```
 $ python3 src/tsp_decision.py
